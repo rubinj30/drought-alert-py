@@ -15,9 +15,9 @@ city = "Marietta"
 state = "GA"
 
 for i in previous_3_days:
-	  data = urlopen(f'http://api.wunderground.com/api/cdc9167d053abdfa/history_{i}/q/{state}/{city}.json')
-	  json_string = str(data.read(),'utf-8')
-  	parsed_json = json.loads(json_string)
+    data = urlopen(f'http://api.wunderground.com/api/cdc9167d053abdfa/history_{i}/q/{state}/{city}.json')
+    json_string = str(data.read(),'utf-8')
+    parsed_json = json.loads(json_string)
 #print(json.dumps(parsed_json, indent=4, sort_keys=True)) # No need for, but i like the way it printed out so clearly
-  	precipi = parsed_json['history']['dailysummary'][0]['precipi']
-	  print(precipi)
+    precipi = parsed_json['history']['dailysummary'][0]['precipi']
+    print(precipi)
